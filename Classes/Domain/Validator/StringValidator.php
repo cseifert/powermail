@@ -61,7 +61,7 @@ class StringValidator extends AbstractValidator
      */
     protected function validateNumbersOnly(string $value): bool
     {
-        return (string)((int)$value) === $value;
+        return (bool)preg_match('/^\d+$/', $value);
     }
 
     /**
